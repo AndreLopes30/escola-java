@@ -37,4 +37,11 @@ public class Aluno {
     public void setTurma(char turma) {
         this.turma = turma;
     }
+
+    public Aluno(String nomme, double nota, int idade, char turma) {
+        this.nomme = nomme;
+        this.nota = nota;
+        this.idade = idade;
+        this.turma = turma;
+    }
 }
