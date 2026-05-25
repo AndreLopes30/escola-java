@@ -6,37 +6,41 @@ import java.util.ArrayList;
 
 public class EscolaService {
     ArrayList<Aluno> alunosLista = new ArrayList<>();
-    public Aluno adicionar() {
-
+    public void adicionar(Aluno alunoNovo) {
+        alunosLista.add(alunoNovo);
     }
-    public Aluno listar() {
+    public alunosLista listar() {
         for(Aluno aluno : alunosLista) {
-            return aluno;
+            return ArrayList<Aluno>;
         }
+        return null;
     }
-    public Aluno listar_aprovados() {
+    public alunosLista listarAprovados() {
         for(Aluno aluno : alunosLista) {
             if(aluno.getNota() >= 6){
-                return aluno;
+                return ArrayList<Aluno>;
             }
         }
+        return null;
     }
-    public Aluno listar_reprovados() {
+    public alunosLista listarReprovados() {
         for(Aluno aluno : alunosLista) {
             if(aluno.getNota() < 6){
-                return aluno;
+                return ArrayList<Aluno>;
             }
         }
+        return null;
     }
-    public Aluno buscar_aluno(String busca) {
+    public Aluno buscarAluno(String busca) {
         for(Aluno aluno : alunosLista) {
             if(aluno.getNome().equals(busca)){
                 return aluno;
             }
         }
+        return null;
     }
 
-    public double exibir_média() {
+    public double exibirMedia() {
         double nota = 0;
         for(Aluno aluno : alunosLista) {
             nota += aluno.getNota();
