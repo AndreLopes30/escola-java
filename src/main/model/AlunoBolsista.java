@@ -11,8 +11,8 @@ public class AlunoBolsista extends Aluno{
         this.bolsa = bolsa;
     }
 
-    public AlunoBolsista(String nomme, double nota, int idade, char turma, double bolsa) {
-        super(nomme, nota, idade, turma);
+    public AlunoBolsista(String nome, double nota, int idade, char turma, double bolsa) {
+        super(nome, nota, idade, turma);
         this.bolsa = bolsa;
     }
 }

@@ -1,7 +1,7 @@
 package model;
 
 public class Aluno {
-    private String nomme;
+    private String nome;
     private double nota;
     private int idade;
     private char turma;
@@ -14,12 +14,12 @@ public class Aluno {
         this.nota = nota;
     }
 
-    public String getNomme() {
-        return nomme;
+    public String getNome() {
+        return nome;
     }
 
-    public void setNomme(String nomme) {
-        this.nomme = nomme;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public int getIdade() {
@@ -38,8 +38,8 @@ public class Aluno {
         this.turma = turma;
     }
 
-    public Aluno(String nomme, double nota, int idade, char turma) {
-        this.nomme = nomme;
+    public Aluno(String nome, double nota, int idade, char turma) {
+        this.nome = nome;
         this.nota = nota;
         this.idade = idade;
         this.turma = turma;
