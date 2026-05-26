@@ -10,6 +10,7 @@ public class EscolaService {
         alunosLista.add(alunoNovo);
     }
     public ArrayList<Aluno> listar() {
+        System.out.println(alunosLista);
         return alunosLista;
     }
     public ArrayList<Aluno> listarAprovados() {
