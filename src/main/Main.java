@@ -16,5 +16,9 @@ public class Main {
         escolaService.adicionar(aluno3);
         escolaService.adicionar(aluno4);
         escolaService.listar();
+        escolaService.listarAprovados();
+        escolaService.listarReprovados();
+        escolaService.buscarAluno("André");
+        escolaService.exibirMedia();
     }
     }
