@@ -16,9 +16,9 @@ public class Main {
         escolaService.adicionar(aluno3);
         escolaService.adicionar(aluno4);
         escolaService.listar();
-        escolaService.listarAprovados();
-        escolaService.listarReprovados();
+        System.out.println(escolaService.listarAprovados());
+        System.out.println(escolaService.exibirMedia());
+        System.out.println(escolaService.listarReprovados());
         escolaService.buscarAluno("André");
-        escolaService.exibirMedia();
     }
     }
