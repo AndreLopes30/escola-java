@@ -9,27 +9,26 @@ public class EscolaService {
     public void adicionar(Aluno alunoNovo) {
         alunosLista.add(alunoNovo);
     }
-    public alunosLista listar() {
-        for(Aluno aluno : alunosLista) {
-            return ArrayList<Aluno>;
-        }
-        return null;
+    public ArrayList<Aluno> listar() {
+        return alunosLista;
     }
-    public alunosLista listarAprovados() {
+    public ArrayList<Aluno> listarAprovados() {
+        ArrayList<Aluno> alunosAprovados = new ArrayList<>();
         for(Aluno aluno : alunosLista) {
             if(aluno.getNota() >= 6){
-                return ArrayList<Aluno>;
+                alunosAprovados.add(aluno);
             }
         }
-        return null;
+        return alunosAprovados;
     }
-    public alunosLista listarReprovados() {
+    public ArrayList<Aluno> listarReprovados() {
+        ArrayList<Aluno> alunosReprovados = new ArrayList<>();
         for(Aluno aluno : alunosLista) {
             if(aluno.getNota() < 6){
-                return ArrayList<Aluno>;
+                alunosReprovados.add(aluno);
             }
         }
-        return null;
+        return alunosReprovados;
     }
     public Aluno buscarAluno(String busca) {
         for(Aluno aluno : alunosLista) {
@@ -45,7 +44,7 @@ public class EscolaService {
         for(Aluno aluno : alunosLista) {
             nota += aluno.getNota();
         }
-        return nota/ alunosLista.toArray().length;
+        return nota/alunosLista.size();
     }
 
 }
