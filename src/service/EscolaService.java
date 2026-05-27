@@ -1,8 +1,10 @@
 package service;
 
 import model.Aluno;
+import model.Turma;
 
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 public class EscolaService {
     ArrayList<Aluno> alunosLista = new ArrayList<>();
@@ -14,22 +16,14 @@ public class EscolaService {
         return alunosLista;
     }
     public ArrayList<Aluno> listarAprovados() {
-        ArrayList<Aluno> alunosAprovados = new ArrayList<>();
-        for(Aluno aluno : alunosLista) {
-            if(aluno.getNota() >= 6){
-                alunosAprovados.add(aluno);
-            }
-        }
-        return alunosAprovados;
+        return alunosLista.stream()
+            .filter(aluno -> aluno.getNota() >= 6)
+            .collect(Collectors.toList());
     }
     public ArrayList<Aluno> listarReprovados() {
-        ArrayList<Aluno> alunosReprovados = new ArrayList<>();
-        for(Aluno aluno : alunosLista) {
-            if(aluno.getNota() < 6){
-                alunosReprovados.add(aluno);
-            }
-        }
-        return alunosReprovados;
+        return alunosLista.stream()
+                .filter(aluno -> aluno.getNota() < 6)
+                .collect(Collectors.toList());
     }
     public Aluno buscarAluno(String busca) {
         for(Aluno aluno : alunosLista) {
@@ -41,11 +35,15 @@ public class EscolaService {
     }
 
     public double exibirMedia() {
-        double nota = 0;
-        for(Aluno aluno : alunosLista) {
-            nota += aluno.getNota();
-        }
-        return nota/alunosLista.size();
+        double media = alunosLista.stream()
+                .mapToDouble(aluno -> (double) aluno.getNota())
+                .average();
+        return media;
     }
 
+    public Turma listarPorTurma(Turma turma) {
+        return alunosLista.stream()
+                .filter(aluno -> aluno.getTurma() == turma)
+                .collect(Collectors.toList());
+    }
 }
