@@ -1,4 +1,4 @@
-package main.model;
+package model;
 
 public class AlunoBolsista extends model.Aluno {
     private double bolsa;

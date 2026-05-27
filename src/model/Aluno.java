@@ -6,10 +6,6 @@ public class Aluno {
     private int idade;
     private final Turma turma;
 
-    public enum Turma {
-        A,B
-    }
-
     public double getNota() {
         return nota;
     }
