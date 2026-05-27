@@ -2,7 +2,7 @@ package service;
 
 import model.Aluno;
 import model.Turma;
-
+import java.util.List;
 import java.util.ArrayList;
 import java.util.stream.Collectors;
 
@@ -11,16 +11,16 @@ public class EscolaService {
     public void adicionar(Aluno alunoNovo) {
         alunosLista.add(alunoNovo);
     }
-    public ArrayList<Aluno> listar() {
+    public List<Aluno> listar() {
         System.out.println(alunosLista);
         return alunosLista;
     }
-    public ArrayList<Aluno> listarAprovados() {
+    public List<Aluno> listarAprovados() {
         return alunosLista.stream()
             .filter(aluno -> aluno.getNota() >= 6)
             .collect(Collectors.toList());
     }
-    public ArrayList<Aluno> listarReprovados() {
+    public List<Aluno> listarReprovados() {
         return alunosLista.stream()
                 .filter(aluno -> aluno.getNota() < 6)
                 .collect(Collectors.toList());
@@ -41,7 +41,7 @@ public class EscolaService {
                 .orElse(0);
     }
 
-    public ArrayList<Aluno> listarPorTurma(Turma turma) {
+    public List<Aluno> listarPorTurma(Turma turma) {
         return alunosLista.stream()
                 .filter(aluno -> aluno.getTurma() == turma)
                 .collect(Collectors.toList());
