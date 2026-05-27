@@ -4,7 +4,11 @@ public class Aluno {
     private String nome;
     private double nota;
     private int idade;
-    private char turma;
+    private final Turma turma;
+
+    public enum Turma {
+        A,B
+    }
 
     public double getNota() {
         return nota;
@@ -30,15 +34,11 @@ public class Aluno {
         this.idade = idade;
     }
 
-    public char getTurma() {
+    public Turma getTurma() {
         return turma;
     }
 
-    public void setTurma(char turma) {
-        this.turma = turma;
-    }
-
-    public Aluno(String nome, double nota, int idade, char turma) {
+    public Aluno(String nome, double nota, int idade, Turma turma) {
         this.nome = nome;
         this.nota = nota;
         this.idade = idade;

@@ -5,10 +5,10 @@ import service.EscolaService;
 
 public class Main {
     public static void main(String[] args) {
-        model.Aluno aluno1 = new Aluno("André", 10, 20, 'A');
-        model.Aluno aluno2 = new Aluno("João", 4, 37, 'B');
-        model.Aluno aluno3 = new Aluno("Roger", 8, 12, 'K');
-        model.Aluno aluno4 = new Aluno("Luiz", 6, 50, 'T');
+        model.Aluno aluno1 = new Aluno("André", 10, 20, Aluno.Turma.A);
+        model.Aluno aluno2 = new Aluno("João", 4, 37, Aluno.Turma.B);
+        model.Aluno aluno3 = new Aluno("Roger", 8, 12, Aluno.Turma.A);
+        model.Aluno aluno4 = new Aluno("Luiz", 6, 50, Aluno.Turma.B);
 
         EscolaService escolaService = new EscolaService();
         escolaService.adicionar(aluno1);
