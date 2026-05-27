@@ -1,9 +1,7 @@
 package model;
 
-public class Aluno {
-    private String nome;
+public class Aluno extends Pessoa{
     private double nota;
-    private int idade;
     private final Turma turma;
 
     public double getNota() {
@@ -14,30 +12,18 @@ public class Aluno {
         this.nota = nota;
     }
 
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public int getIdade() {
-        return idade;
-    }
-
-    public void setIdade(int idade) {
-        this.idade = idade;
-    }
-
     public Turma getTurma() {
         return turma;
     }
 
     public Aluno(String nome, double nota, int idade, Turma turma) {
-        this.nome = nome;
+        super(nome,idade);
         this.nota = nota;
-        this.idade = idade;
         this.turma = turma;
+    }
+
+    @Override
+    public String exibirInfo() {
+        return String.format("Aluno: %s | Nota: %s | Turma: %s ", this.nome, this.nota, this.turma);
     }
 }

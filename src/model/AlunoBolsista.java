@@ -1,6 +1,6 @@
 package model;
 
-public class AlunoBolsista extends model.Aluno {
+public class AlunoBolsista extends Aluno {
     private double bolsa;
 
     public double getBolsa() {
@@ -14,5 +14,10 @@ public class AlunoBolsista extends model.Aluno {
     public AlunoBolsista(String nome, double nota, int idade, Turma turma, double bolsa) {
         super(nome, nota, idade, turma);
         this.bolsa = bolsa;
+    }
+
+    @Override
+    public String exibirInfo() {
+        return String.format("Aluno: %s | Nota: %s | Turma: %s | Bolsa: %s ", getNome(), getNota(), getTurma(), this.bolsa);
     }
 }
