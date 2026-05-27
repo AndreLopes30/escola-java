@@ -7,26 +7,26 @@ import java.util.ArrayList;
 import java.util.stream.Collectors;
 
 public class EscolaService {
-    ArrayList<Aluno> alunosLista = new ArrayList<>();
+    Repositorio<Aluno> alunosLista = new Repositorio<>();
     public void adicionar(Aluno alunoNovo) {
-        alunosLista.add(alunoNovo);
+        alunosLista.adicionar(  alunoNovo);
     }
     public List<Aluno> listar() {
         System.out.println(alunosLista);
-        return alunosLista;
+        return alunosLista.listar();
     }
     public List<Aluno> listarAprovados() {
-        return alunosLista.stream()
+        return alunosLista.listar().stream()
             .filter(aluno -> aluno.getNota() >= 6)
             .collect(Collectors.toList());
     }
     public List<Aluno> listarReprovados() {
-        return alunosLista.stream()
+        return alunosLista.listar().stream()
                 .filter(aluno -> aluno.getNota() < 6)
                 .collect(Collectors.toList());
     }
     public Aluno buscarAluno(String busca) {
-        for(Aluno aluno : alunosLista) {
+        for(Aluno aluno : alunosLista.listar()) {
             if(aluno.getNome().equals(busca)){
                 return aluno;
             }
@@ -35,14 +35,14 @@ public class EscolaService {
     }
 
     public double exibirMedia() {
-        return alunosLista.stream()
+        return alunosLista.listar().stream()
                 .mapToDouble(aluno -> (double) aluno.getNota())
                 .average()
                 .orElse(0);
     }
 
     public List<Aluno> listarPorTurma(Turma turma) {
-        return alunosLista.stream()
+        return alunosLista.listar().stream()
                 .filter(aluno -> aluno.getTurma() == turma)
                 .collect(Collectors.toList());
     }
