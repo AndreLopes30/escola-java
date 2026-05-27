@@ -35,13 +35,13 @@ public class EscolaService {
     }
 
     public double exibirMedia() {
-        double media = alunosLista.stream()
+        return alunosLista.stream()
                 .mapToDouble(aluno -> (double) aluno.getNota())
-                .average();
-        return media;
+                .average()
+                .orElse(0);
     }
 
-    public Turma listarPorTurma(Turma turma) {
+    public ArrayList<Aluno> listarPorTurma(Turma turma) {
         return alunosLista.stream()
                 .filter(aluno -> aluno.getTurma() == turma)
                 .collect(Collectors.toList());
