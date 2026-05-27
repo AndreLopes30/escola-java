@@ -24,6 +24,6 @@ public class Aluno extends Pessoa{
 
     @Override
     public String exibirInfo() {
-        return String.format("Aluno: %s | Nota: %s | Turma: %s ", this.nome, this.nota, this.turma);
+        return String.format("Aluno: %s | Nota: %s | Turma: %s ", getNome(), this.nota, this.turma);
     }
 }
