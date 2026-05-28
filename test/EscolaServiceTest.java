@@ -18,8 +18,6 @@ public class EscolaServiceTest {
         escolaService.adicionar(aluno2);
         escolaService.listar();
         assertEquals(1, escolaService.listarAprovados().size());
-
-
     }
 
 
@@ -30,5 +28,17 @@ public class EscolaServiceTest {
         assertThrows(IllegalArgumentException.class, () -> {
             model.Aluno aluno1 = new Aluno("André", 15, 20, Turma.A, LocalDate.of(2025,02,10));
         });
+    }
+
+    @Test
+    public void deveCalcularMediaCorretamente() {
+        EscolaService escolaService = new EscolaService();
+        model.Aluno aluno1 = new Aluno("André", 10, 20, Turma.A, LocalDate.of(2025,02,10));
+        model.Aluno aluno2 = new Aluno("João", 4, 37, Turma.B, LocalDate.of(2023,05,12)) ;
+        escolaService.adicionar(aluno1);
+        escolaService.adicionar(aluno2);
+        escolaService.exibirMedia();
+        assertEquals(7, escolaService.exibirMedia(), 0.01);
+
     }
 }
