@@ -12,7 +12,7 @@ public class EscolaService {
         alunosLista.adicionar(  alunoNovo);
     }
     public List<Aluno> listar() {
-        System.out.println(alunosLista);
+        System.out.println(alunosLista.listar());
         return alunosLista.listar();
     }
     public List<Aluno> listarAprovados() {

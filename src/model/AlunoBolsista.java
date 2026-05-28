@@ -1,5 +1,7 @@
 package model;
 
+import java.time.LocalDate;
+
 public class AlunoBolsista extends Aluno {
     private double bolsa;
 
@@ -11,8 +13,8 @@ public class AlunoBolsista extends Aluno {
         this.bolsa = bolsa;
     }
 
-    public AlunoBolsista(String nome, double nota, int idade, Turma turma, double bolsa) {
-        super(nome, nota, idade, turma);
+    public AlunoBolsista(String nome, double nota, int idade, Turma turma, LocalDate dataMatricula, double bolsa) {
+        super(nome, nota, idade, turma, dataMatricula);
         this.bolsa = bolsa;
     }
 
